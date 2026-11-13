@@ -42,6 +42,23 @@ QUALITY = ["ultra detailed", "8k", "highly detailed", "trending on artstation", 
 STOP = set("a an the of on in at with and to is are its it his her their there this that some".split())
 
 
+BOILERPLATE = [
+    "no text, no watermark, no border, consistent character design, keep the same style as the reference",
+    "high quality, balanced composition, rule of thirds, soft shadows, rich detail in the background, professional color grading",
+    "static camera, slow push-in, subtle motion only, keep the illustration style, no new objects, no text",
+]
+
+
+def make_long_prompt(captions: list[str], rng: random.Random, style: str | None) -> str:
+    """Real prompts run to 50-150 words: several facts about one scene plus boilerplate."""
+    k = rng.randint(2, min(4, len(captions)))
+    body = ". ".join(c.strip().rstrip(".") for c in rng.sample(captions, k))
+    out = make_prompt(body, rng, style)
+    if rng.random() < 0.5:
+        out += ". " + rng.choice(BOILERPLATE)
+    return out
+
+
 def make_prompt(caption: str, rng: random.Random, style: str | None) -> str:
     text = caption.strip().rstrip(".")
     if rng.random() < 0.5:

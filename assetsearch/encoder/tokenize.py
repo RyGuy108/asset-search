@@ -19,7 +19,7 @@ import torch
 
 WORD_RE = re.compile(r"[a-z0-9]+(?:'[a-z]+)?")
 PAD, UNK = 0, 1
-NGRAM_BUCKETS = 1 << 17
+NGRAM_BUCKETS = 1 << 16
 NGRAMS = (3, 4)
 MAX_NGRAMS_PER_WORD = 12
 

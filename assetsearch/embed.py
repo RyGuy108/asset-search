@@ -21,7 +21,7 @@ class Embedder:
         model_dir = Path(model_dir)
         ckpt = torch.load(model_dir / "encoder.pt", map_location="cpu", weights_only=True)
         self.model = AssetEncoder(**ckpt["config"])
-        self.model.load_state_dict(ckpt["state"])
+        self.model.load_state_dict({k: v.float() if v.is_floating_point() else v for k, v in ckpt["state"].items()})
         self.model.eval()
         self.tok = Tokenizer.load(model_dir / "tokenizer.json")
         self.dim = ckpt["config"]["out_dim"]

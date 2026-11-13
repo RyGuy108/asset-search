@@ -18,7 +18,7 @@ from pathlib import Path
 
 import torch
 
-from .augment import make_prompt, make_query, random_style
+from .augment import make_long_prompt, make_prompt, make_query, random_style
 from .model import AssetEncoder, info_nce
 from .tokenize import Tokenizer
 
@@ -37,15 +37,16 @@ def split_coco(path: Path) -> dict[str, dict[int, list[str]]]:
     return out
 
 
-def make_pairs(split: dict[int, list[str]], rng: random.Random) -> tuple[list[str], list[str], list[int]]:
+def make_pairs(split: dict[int, list[str]], rng: random.Random, long_frac: float = 0.0) -> tuple[list[str], list[str], list[int]]:
     qs, ds, ids = [], [], []
     for img, caps in split.items():
-        if len(caps) < 2:
+        if len(caps) < 3:
             continue
         a, b = rng.sample(caps, 2)
         style = random_style(rng)
         qs.append(make_query(a, rng, style))
-        ds.append(make_prompt(b, rng, style))
+        rest = [c for c in caps if c != a]
+        ds.append(make_long_prompt(rest, rng, style) if rng.random() < long_frac else make_prompt(b, rng, style))
         ids.append(img)
     return qs, ds, ids
 
@@ -72,6 +73,7 @@ def main() -> None:
     ap.add_argument("--layers", type=int, default=2)
     ap.add_argument("--bag-only", action="store_true", help="ablation: no Transformer")
     ap.add_argument("--lr", type=float, default=2e-3)
+    ap.add_argument("--long-frac", type=float, default=0.4, help="share of documents built from several captions + boilerplate")
     args = ap.parse_args()
 
     torch.manual_seed(0)
@@ -93,7 +95,7 @@ def main() -> None:
     args.out.mkdir(parents=True, exist_ok=True)
     for epoch in range(args.epochs):
         t0 = time.time()
-        qs, ds, ids = make_pairs(splits["train"], rng)
+        qs, ds, ids = make_pairs(splits["train"], rng, args.long_frac)
         order = list(range(len(qs)))
         rng.shuffle(order)
         tot = 0.0
@@ -112,7 +114,9 @@ def main() -> None:
         print(f"epoch {epoch + 1:2d}  loss {tot / steps_per_epoch:.3f}  dev R@10 (1k imgs) {r:.3f}  {time.time() - t0:.0f}s", flush=True)
         if r > best:
             best = r
-            torch.save({"config": model.config, "state": model.state_dict()}, args.out / "encoder.pt")
+            # fp16 on disk halves the checkpoint; inference upcasts to fp32.
+            state = {k: v.half() if v.is_floating_point() else v for k, v in model.state_dict().items()}
+            torch.save({"config": model.config, "state": state}, args.out / "encoder.pt")
             tok.save(args.out / "tokenizer.json")
     print(f"best dev R@10 {best:.3f} -> {args.out}")
 
