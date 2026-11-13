@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+data/captions_val2014.json
+data/media/
+web/node_modules/
+web/.next/
+.env
