@@ -1,0 +1,62 @@
+# Second query set, written after the first evaluation and before any fixes it motivated.
+# Used once, to score the final system. Same format and relevance rules as queries.tsv.
+lady with freckles	protected_00_0,protected_00_1
+redhead with a thin mustache	protected_04_0
+man with round glasses and a beard	protected_01_0
+woman in her forties with natural hair	protected_03_0
+latino guy shaved head	protected_07_0
+young asian man spiky hairdo	protected_02_0
+mustached middle aged man at a stadium	neg3_12_0
+korean woman chef	neg3_11_0
+nigerian woman on a boat	neg3_01_0
+grandmother in a cafe	neg3_09_0
+guy in a hard hat	scene2_08_0,neg3_08_0
+somebody in a graduation gown	scene2_10_0,neg3_10_0
+someone sitting in the driver seat	scene2_17_0,neg3_17_0
+lab scientist portrait	scene2_16_0,neg3_16_0
+person relaxing on the couch	scene2_06_0,neg3_06_0
+bar with neon colored lighting	scene2_13_0,neg3_13_0
+shopping at the market	scene_00_0,scene2_02_0,neg3_02_0,neg3_22_0
+cafe portrait laughing	scene_01_0,scene2_09_0,neg3_09_0
+person walking under an umbrella	scene_14_0
+studio headphones recording	scene_17_0
+person on a bike in the netherlands	scene_11_0
+someone on a train	scene_09_0
+public speaker at a press conference	scene_19_0
+person lifting at the gym	scene_16_0
+storefront signage mockup	logoscene_04_0
+cap on a table	logoscene_05_0
+coffee mug branding	logoscene_01_0
+highway billboard	logoscene_07_0
+cardboard box delivery	logoscene_09_0
+can of soda on a picnic table	logoscene_06_0
+marble statue	nsfwneg_03_0
+yoga class	nsfwneg_02_0
+ballet dancer	nsfwneg_07_0
+swimmer at a public pool	nsfwneg_00_0
+mother and newborn	nsfwneg_14_0
+time machine in the lab	scene_03-laboratory,scene_05-departure
+burning trees and creatures	scene_18-fire
+huge red sun over a dead sea	scene_19-crab,scene_20-eclipse
+the girl asleep on the hillside	scene_16-stars
+museum with a brontosaurus	scene_17-palace
+pale underground creatures	ref_morlock,scene_13-eyes,scene_14-shaft,scene_15-underworld,scene_18-fire
+winged sphinx at night	scene_11-gone,scene_07-sphinx
+rescuing someone from a river	scene_12-weena
+victorian dinner party	scene_01-fireside,scene_04-return
+model time machine disappearing	scene_02-model
+cartoon cell splitting	mitosis_key2,mitosis_shot1
+leaf cell with sunglasses	photosynthesis_key0
+oxygen bubbles cartoon	photosynthesis_key2,photosynthesis_shot1
+mitosis animation	mitosis_shot0,mitosis_shot1
+runner silhouette mountain storm	run_04_hills
+sunrise river run aerial	run_02_route
+rainy night running shoes	run_03_rain
+crossing the finish line	run_08_finish
+streetlight before dawn runner	run_01_alarm
+camel coat	closet_coat-camel
+white oxford	closet_oxford-white
+denim jacket	closet_jacket-denim
+charcoal trousers	closet_trousers-charcoal
+navy crewneck	closet_crew-navy
+olive shorts	closet_shorts-olive
