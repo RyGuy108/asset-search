@@ -26,6 +26,7 @@ from psycopg import Connection
 from .ingest import to_halfvec as _halfvec
 
 RRF_K = 60
+KW_WEIGHT = 1.0  # chosen on the dev query set (scripts/eval_library.py --tune)
 
 
 @dataclass
@@ -51,16 +52,27 @@ def keyword(conn: Connection, user_id: str, q: str, k: int = 10, any_word: bool 
 
 
 def vector(conn: Connection, user_id: str, qv: np.ndarray, k: int = 10, kind: str | None = None,
-           ef_search: int = 100, iterative: bool = True) -> list[Hit]:
+           ef_search: int = 100, iterative: bool = True, chunks: bool = True) -> list[Hit]:
     register_vector(conn)
     with conn.transaction():
         conn.execute(f"SET LOCAL hnsw.ef_search = {int(ef_search)}")
         conn.execute(f"SET LOCAL hnsw.iterative_scan = {'relaxed_order' if iterative else 'off'}")
         rows = conn.execute(
+            """WITH whole AS (
+                   SELECT id, embedding <=> %(v)s::halfvec AS d FROM assets
+                   WHERE user_id = %(u)s AND (%(kind)s::text IS NULL OR kind = %(kind)s)
+                   ORDER BY d LIMIT %(n)s),
+               part AS (
+                   SELECT c.asset_id AS id, c.embedding <=> %(v)s::halfvec AS d FROM asset_chunks c
+                   JOIN assets a ON a.id = c.asset_id
+                   WHERE c.user_id = %(u)s AND (%(kind)s::text IS NULL OR a.kind = %(kind)s)
+                   ORDER BY d LIMIT %(n)s)
+               SELECT id, min(d) AS d FROM (SELECT * FROM whole UNION ALL SELECT * FROM part) x
+               GROUP BY id ORDER BY d LIMIT %(k)s""" if chunks else
             """SELECT id, embedding <=> %(v)s::halfvec AS d FROM assets
                WHERE user_id = %(u)s AND (%(kind)s::text IS NULL OR kind = %(kind)s)
                ORDER BY d LIMIT %(k)s""",
-            {"v": _halfvec(qv), "u": user_id, "k": k, "kind": kind},
+            {"v": _halfvec(qv), "u": user_id, "k": k, "n": k * 3, "kind": kind},
         ).fetchall()
     # relaxed_order can return rows slightly out of order; re-sort the small result.
     return sorted((Hit(r[0], 1 - float(r[1])) for r in rows), key=lambda h: -h.score)
@@ -76,8 +88,8 @@ def rrf(*lists: list[Hit], k: int = 10, weights: tuple[float, ...] | None = None
 
 
 def hybrid(conn: Connection, user_id: str, q: str, qv: np.ndarray, k: int = 10, kind: str | None = None,
-           depth: int = 50) -> list[Hit]:
+           depth: int = 50, kw_weight: float = KW_WEIGHT) -> list[Hit]:
     v = vector(conn, user_id, qv, depth, kind)
     kw = keyword(conn, user_id, q, depth, any_word=True, kind=kind)
-    return rrf(v, kw, k=k, weights=(1.0, 0.5))
+    return rrf(v, kw, k=k, weights=(1.0, kw_weight))
 

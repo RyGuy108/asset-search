@@ -73,6 +73,7 @@ def main() -> None:
     ap.add_argument("--queries", type=Path, default=Path("eval/queries.tsv"))
     ap.add_argument("--model", type=Path, default=Path("models/encoder"))
     ap.add_argument("--out", type=Path, default=Path("results/library_eval.json"))
+    ap.add_argument("--tune", action="store_true")
     args = ap.parse_args()
 
     assets = [json.loads(line) for line in args.library.read_text().splitlines()]
@@ -87,16 +88,21 @@ def main() -> None:
     systems = {
         "keyword (all words)": lambda q, v: search.keyword(conn, USER, q, 10),
         "keyword (any word)": lambda q, v: search.keyword(conn, USER, q, 10, any_word=True),
-        "vector": lambda q, v: search.vector(conn, USER, v, 10),
+        "vector (whole prompt)": lambda q, v: search.vector(conn, USER, v, 10, chunks=False),
+        "vector (+ sentence chunks)": lambda q, v: search.vector(conn, USER, v, 10),
         "hybrid (RRF)": lambda q, v: search.hybrid(conn, USER, q, v, 10),
     }
+    if args.tune:
+        # Fusion weight sweep: run on the dev queries only, then fix the value for the held-out set.
+        for w in (0.25, 0.5, 0.75, 1.0, 1.5, 2.0):
+            systems[f"hybrid kw_weight={w}"] = (lambda w: lambda q, v: search.hybrid(conn, USER, q, v, 10, kw_weight=w))(w)
     report, per_query = {}, defaultdict(dict)
     for name, fn in systems.items():
         rows, lat = [], []
         for q, keys in queries:
             rel = expand(assets, keys)
             t0 = time.perf_counter()
-            v = emb.encode([q])[0] if "keyword" not in name else None
+            v = emb.encode([q])[0] if "keyword" not in name else None  # encode time counts toward latency
             hits = fn(q, v)
             lat.append((time.perf_counter() - t0) * 1000)
             ranked = [key_of[h.id] for h in hits]
@@ -107,9 +113,9 @@ def main() -> None:
         report[name]["p50 ms"] = round(statistics.median(lat), 2)
     print(f"{len(assets)} assets, {len(queries)} queries\n")
     cols = ["R@1", "R@5", "R@10", "hit@10", "MRR", "nDCG@10", "empty", "p50 ms"]
-    print(f"{'system':22s}" + "".join(f"{c:>9s}" for c in cols))
+    print(f"{'system':28s}" + "".join(f"{c:>9s}" for c in cols))
     for name, m in report.items():
-        print(f"{name:22s}" + "".join(f"{m[c]:9.3f}" for c in cols))
+        print(f"{name:28s}" + "".join(f"{m[c]:9.3f}" for c in cols))
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps({"n_assets": len(assets), "n_queries": len(queries), "systems": report,
                                     "per_query": per_query}, indent=1))
