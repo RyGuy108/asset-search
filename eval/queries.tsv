@@ -1,0 +1,141 @@
+# Hand-written search queries over data/library.jsonl, written before the encoder was trained.
+# query <TAB> relevant asset keys (comma separated). Every asset sharing a listed asset's prompt,
+# and every asset derived from it (face swaps, cutouts, animated clips), also counts as relevant.
+freckled woman with curly hair headshot	protected_00_0
+ginger guy with a mustache id photo	protected_04_0
+asian guy spiky hair passport pic	protected_02_0
+indian woman long black hair portrait	protected_05_0
+black woman with gold earrings headshot	protected_03_0
+older man grey beard and glasses passport photo	protected_01_0
+elderly lady with a silver bob	protected_06_0
+bald hispanic man with a goatee	protected_07_0
+blonde girl with a nose piercing	protected_08_0
+middle eastern man with stubble and thick brows	protected_09_0
+woman wavy brown hair portrait	impostor_00_0
+korean man bowl cut	impostor_02_0
+guy with dreadlocks portrait	impostor_03_0
+older woman curly grey hair	impostor_04_0
+young man blond hair blue eyes	impostor_05_0
+person at the farmers market	scene_00_0
+someone laughing at a cafe	scene_01_0,scene2_09_0,neg3_09_0
+neon city street at night	scene_02_0,run_03_rain
+autumn park bench	scene_03_0
+hiker on a mountain	scene_04_0
+guy on his laptop at work	scene_05_0
+wedding party holding a drink	scene_06_0
+sunset beach wind blowing hair	scene_07_0
+cooking in the kitchen	scene_08_0,scene2_11_0,neg3_11_0
+riding the metro looking out the window	scene_09_0
+concert crowd stage lights	scene_10_0
+cycling in amsterdam	scene_11_0
+reading among library shelves	scene_12_0
+basketball fan in the bleachers	scene_13_0
+umbrella in the rain	scene_14_0
+black and white dramatic portrait	scene_15_0
+weightlifting at the gym	scene_16_0
+musician wearing headphones in a studio	scene_17_0
+sitting by a campfire	scene_18_0
+politician speaking at a podium	scene_19_0
+empty shop sign	logoscene_04_0
+coffee cup mockup	logoscene_01_0
+blank tshirt mockup on brick	logoscene_00_0
+delivery truck side panel	logoscene_02_0
+baseball hat product shot	logoscene_05_0
+paper shopping bag	logoscene_03_0
+soda can mockup	logoscene_06_0
+blank billboard by the freeway	logoscene_07_0
+laptop cover mockup	logoscene_08_0
+package left on the doorstep	logoscene_09_0
+hooded sweatshirt worn while walking	logoscene_10_0
+gym water bottle	logoscene_11_0
+food truck at a fair	logoscene_12_0
+sneaker on a display stand	logoscene_13_0
+phone cover on marble	logoscene_14_0
+lady in a swimsuit by the pool	nsfwneg_00_0
+shirtless guy jogging on the beach	nsfwneg_01_0
+couple doing yoga	nsfwneg_02_0
+greek statue in a museum	nsfwneg_03_0
+crowded beach sunbathers	nsfwneg_04_0
+bodybuilding competition	nsfwneg_05_0
+woman doing an ab workout	nsfwneg_06_0
+ballerina leaping	nsfwneg_07_0
+renaissance painting mythology	nsfwneg_08_0
+guy in his underwear in a messy room	nsfwneg_09_0
+couple kissing on a bench	nsfwneg_10_0
+lingerie flat lay	nsfwneg_11_0
+surfer in a wetsuit	nsfwneg_12_0
+festival bikini	nsfwneg_13_0
+new mom with her baby in the hospital	nsfwneg_14_0
+grocery store aisle portrait	scene2_02_0,neg3_02_0,neg3_22_0
+street food vendor smiling	scene2_00_0,neg3_00_0,neg3_20_0
+theme park selfie	scene2_03_0,neg3_03_0,neg3_23_0
+on a ferry looking at the camera	scene2_01_0,neg3_01_0,neg3_21_0
+snowing winter coat	scene2_05_0,neg3_05_0
+construction worker hard hat	scene2_08_0,neg3_08_0
+graduation photo cap and gown	scene2_10_0,neg3_10_0
+scientist in a lab coat	scene2_16_0,neg3_16_0
+person driving a car	scene2_17_0,neg3_17_0
+traveler at the airport with a backpack	scene2_18_0,neg3_18_0
+skateboarder at the skatepark	scene2_19_0,neg3_19_0
+rooftop golden hour portrait	scene2_14_0,neg3_14_0
+dark bar with colorful lights	scene2_13_0,neg3_13_0
+waiting at the bus stop on a cloudy day	scene2_07_0,neg3_07_0
+man with a mullet	neg3_24_0
+grandma with a coffee	neg3_09_0
+woman wearing a headscarf	neg3_14_0
+guy with a long blond viking beard	neg3_05_0
+woman with braids	neg3_01_0,neg3_23_0
+bald heavyset older man	neg3_00_0
+mexican man white beard sunglasses	neg3_15_0
+chef with a bob haircut	neg3_11_0
+victorian time machine design sheet	ref_machine
+morlock creature	ref_morlock,scene_13-eyes,scene_14-shaft,scene_15-underworld,scene_18-fire
+the inventor character sheet	ref_traveller
+tiny eloi girl with flowers in her hair	ref_weena
+gentlemen arguing by the fireplace after dinner	scene_01-fireside
+miniature model vanishing	scene_02-model
+inventor's workshop at night with a lamp	scene_03-laboratory
+dinner guests shocked when he comes back	scene_04-return
+day and night flashing past the window	scene_05-departure
+giant sphinx statue in a hailstorm	scene_07-sphinx
+crowd of small people touching his coat	scene_08-eloi
+eating fruit in a ruined hall with stained glass	scene_09-hall
+looking over the valley at sunset from a hill	scene_10-sunset
+machine is missing at night	scene_11-gone
+carrying her out of the river	scene_12-weena
+glowing eyes in the dark	scene_13-eyes,scene_14-shaft
+climbing down a well	scene_14-shaft
+lighting a match in a cave	scene_15-underworld
+sleeping under the stars	scene_16-stars
+dinosaur skeleton in a museum	scene_17-palace
+burning forest at night	scene_18-fire
+giant crab on a dead beach	scene_19-crab
+end of the world eclipse snow	scene_20-eclipse
+dried white flowers on a table	scene_21-flowers
+lithograph book illustration	scene_01-fireside,scene_02-model,scene_03-laboratory,scene_04-return,scene_05-departure,scene_06-centuries,scene_07-sphinx,scene_08-eloi,scene_09-hall,scene_10-sunset,scene_11-gone,scene_12-weena,scene_13-eyes,scene_14-shaft,scene_15-underworld,scene_16-stars,scene_17-palace,scene_18-fire,scene_19-crab,scene_20-eclipse,scene_21-flowers,ref_machine,ref_morlock,ref_traveller,ref_weena
+cell dividing in two cartoon	mitosis_key1,mitosis_key2
+chromosomes lining up	mitosis_key1
+cartoon plant cell soaking up sunlight	photosynthesis_key0,photosynthesis_key1
+blob holding a sugar cube	photosynthesis_key2
+jelly mascot character sheet	bloop_ref
+music for the science video	mitosis_music,photosynthesis_music
+early morning runner tying shoelaces	run_01_alarm
+drone shot of a runner by the river	run_02_route
+feet splashing through puddles	run_03_rain,run_06_pr
+running uphill in a storm	run_04_hills
+running track at dusk	run_05_streak
+marathon finish line	run_08_finish
+marathoner with cheering crowd	run_07_raceday,run_08_finish
+white button down shirt	closet_oxford-white
+navy sweater	closet_crew-navy
+grey hoodie	closet_hoodie-grey,logoscene_10_0
+plain black t-shirt	closet_tee-black
+striped shirt	closet_breton
+dark blue jeans	closet_jeans-indigo
+khaki pants	closet_chinos-khaki
+grey dress pants	closet_trousers-charcoal
+green running shorts	closet_shorts-olive
+tan overcoat	closet_coat-camel
+black rain jacket	closet_shell-black
+jean jacket	closet_jacket-denim
+outfit try on	fit_0fb3813a892c18d3
