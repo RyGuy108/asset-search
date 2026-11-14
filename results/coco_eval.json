@@ -1,0 +1,71 @@
+{
+ "n": 3000,
+ "examples": [
+  [
+   "painting a group of men playing a game of baseball on top of a baseball field",
+   "357"
+  ],
+  [
+   "man flying cyberpunk",
+   "569"
+  ],
+  [
+   "refrigerator was",
+   "802"
+  ],
+  [
+   "film old stove",
+   "1573"
+  ],
+  [
+   "leaning aginst",
+   "1852"
+  ],
+  [
+   "pretty little girl flying kite",
+   "1955"
+  ],
+  [
+   "couple floating out ocean surfboards",
+   "2171"
+  ],
+  [
+   "woman sells",
+   "2525"
+  ],
+  [
+   "airplane under blue sky",
+   "3035"
+  ],
+  [
+   "miniature women who adjusting",
+   "3109"
+  ]
+ ],
+ "systems": {
+  "keyword (all words)": {
+   "R@1": 0.023,
+   "R@10": 0.039,
+   "MRR@10": 0.029,
+   "empty": 0.826
+  },
+  "keyword (any word)": {
+   "R@1": 0.116,
+   "R@10": 0.322,
+   "MRR@10": 0.173,
+   "empty": 0.001
+  },
+  "vector": {
+   "R@1": 0.283,
+   "R@10": 0.628,
+   "MRR@10": 0.386,
+   "empty": 0.0
+  },
+  "hybrid (RRF)": {
+   "R@1": 0.216,
+   "R@10": 0.58,
+   "MRR@10": 0.317,
+   "empty": 0.0
+  }
+ }
+}

@@ -1,0 +1,2400 @@
+{
+ "n_assets": 389,
+ "n_queries": 60,
+ "systems": {
+  "keyword (all words)": {
+   "R@1": 0.367,
+   "R@5": 0.336,
+   "R@10": 0.336,
+   "hit@10": 0.367,
+   "MRR": 0.367,
+   "nDCG@10": 0.343,
+   "empty": 0.633,
+   "MRR (no shared words)": null,
+   "p50 ms": 1.2
+  },
+  "keyword (any word)": {
+   "R@1": 0.817,
+   "R@5": 0.873,
+   "R@10": 0.9,
+   "hit@10": 0.967,
+   "MRR": 0.872,
+   "nDCG@10": 0.855,
+   "empty": 0.0,
+   "MRR (no shared words)": null,
+   "p50 ms": 1.33
+  },
+  "vector (whole prompt)": {
+   "R@1": 0.65,
+   "R@5": 0.642,
+   "R@10": 0.691,
+   "hit@10": 0.85,
+   "MRR": 0.705,
+   "nDCG@10": 0.639,
+   "empty": 0.0,
+   "MRR (no shared words)": null,
+   "p50 ms": 4.85
+  },
+  "vector (+ sentence chunks)": {
+   "R@1": 0.717,
+   "R@5": 0.753,
+   "R@10": 0.785,
+   "hit@10": 0.883,
+   "MRR": 0.757,
+   "nDCG@10": 0.735,
+   "empty": 0.0,
+   "MRR (no shared words)": null,
+   "p50 ms": 6.57
+  },
+  "hybrid (RRF)": {
+   "R@1": 0.95,
+   "R@5": 0.919,
+   "R@10": 0.925,
+   "hit@10": 0.983,
+   "MRR": 0.964,
+   "nDCG@10": 0.92,
+   "empty": 0.0,
+   "MRR (no shared words)": null,
+   "p50 ms": 9.48
+  }
+ },
+ "mismatch_queries": [],
+ "per_query": {
+  "lady with freckles": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "protected_00_0",
+     "neg3_17_0",
+     "neg3_17_1"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "swap_p00_2",
+     "swap_p00_3",
+     "protected_00_0"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "swap_p00_3",
+     "swap_p00_2",
+     "protected_00_0"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "swap_p00_3",
+     "protected_00_0",
+     "swap_p00_2"
+    ]
+   }
+  },
+  "redhead with a thin mustache": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "protected_04_0",
+     "swap_p04_0",
+     "swap_p04_1"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "protected_04_0",
+     "swap_p04_1",
+     "swap_p04_0"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "swap_p04_0",
+     "swap_p04_2",
+     "swap2_p04_1"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "swap_p04_0",
+     "swap_p04_3",
+     "swap_p04_2"
+    ]
+   }
+  },
+  "man with round glasses and a beard": {
+   "keyword (all words)": {
+    "MRR": 1.0,
+    "top3": [
+     "protected_01_0",
+     "swap_p01_0",
+     "swap_p01_1"
+    ]
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "protected_01_0",
+     "swap_p01_0",
+     "swap_p01_1"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "protected_01_0",
+     "impostor_01_0",
+     "protected_04_0"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "protected_01_0",
+     "impostor_01_0",
+     "swap2_p01_1"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "protected_01_0",
+     "swap_p01_0",
+     "swap_p01_1"
+    ]
+   }
+  },
+  "woman in her forties with natural hair": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "swap_p03_2",
+     "swap_p03_3",
+     "swap_p03_0"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 0.25,
+    "top3": [
+     "impostor_00_0",
+     "protected_00_0",
+     "impostor_04_0"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 0.25,
+    "top3": [
+     "impostor_00_0",
+     "protected_00_0",
+     "impostor_04_0"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "swap_p03_2",
+     "protected_03_0",
+     "swap_p00_1"
+    ]
+   }
+  },
+  "latino guy shaved head": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "protected_07_0",
+     "swap_p07_0",
+     "swap_p07_1"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "protected_07_0",
+     "swap_p07_3",
+     "swap_p07_2"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "protected_07_0",
+     "swap_p07_3",
+     "swap_p07_2"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "protected_07_0",
+     "swap_p07_1",
+     "swap_p07_0"
+    ]
+   }
+  },
+  "young asian man spiky hairdo": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "protected_02_0",
+     "swap_p02_0",
+     "swap_p02_1"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "protected_02_0",
+     "swap_i05_2",
+     "swap_i02_2"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "protected_02_0",
+     "swap_i05_2",
+     "swap2_p02_2"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "protected_02_0",
+     "swap_p02_0",
+     "swap_p02_2"
+    ]
+   }
+  },
+  "mustached middle aged man at a stadium": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "neg3_12_0",
+     "neg3_12_1",
+     "protected_04_0"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "neg3_12_1",
+     "neg3_12_0",
+     "scene_10_1"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "neg3_12_1",
+     "neg3_12_0",
+     "scene_02-model"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "neg3_12_1",
+     "neg3_12_0",
+     "scene_02-model"
+    ]
+   }
+  },
+  "korean woman chef": {
+   "keyword (all words)": {
+    "MRR": 1.0,
+    "top3": [
+     "neg3_11_0",
+     "neg3_11_1"
+    ]
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "neg3_11_0",
+     "neg3_11_1",
+     "ref_weena"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "neg3_11_1",
+     "neg3_11_0",
+     "scene2_11_1"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "neg3_11_1",
+     "neg3_11_0",
+     "swap2_p07_1"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "neg3_11_0",
+     "neg3_11_1",
+     "scene2_11_0"
+    ]
+   }
+  },
+  "nigerian woman on a boat": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "neg3_01_0",
+     "neg3_01_1",
+     "ref_weena"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "neg3_01_1",
+     "neg3_01_0",
+     "scene_12-weena"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "neg3_01_1",
+     "neg3_01_0",
+     "scene_12-weena"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "neg3_01_0",
+     "neg3_01_1",
+     "neg3_21_1"
+    ]
+   }
+  },
+  "grandmother in a cafe": {
+   "keyword (all words)": {
+    "MRR": 1.0,
+    "top3": [
+     "neg3_09_0",
+     "neg3_09_1"
+    ]
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "neg3_09_0",
+     "neg3_09_1",
+     "logoscene_01_0"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 0.0,
+    "top3": [
+     "scene_09-hall",
+     "scene_07-sphinx",
+     "scene_15-underworld"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 0.0,
+    "top3": [
+     "scene_07-sphinx",
+     "clip_07-sphinx",
+     "scene_09-hall"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "neg3_09_0",
+     "neg3_09_1",
+     "clip_07-sphinx"
+    ]
+   }
+  },
+  "guy in a hard hat": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene2_08_0",
+     "scene2_08_1",
+     "neg3_08_0"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 0.0,
+    "top3": [
+     "swap_i03_0",
+     "fit_d8c94822b41a1dc6",
+     "fit_cdb439def78ad6ac"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "neg3_08_1",
+     "neg3_08_0",
+     "swap_i03_0"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "neg3_08_0",
+     "neg3_08_1",
+     "scene2_08_0"
+    ]
+   }
+  },
+  "somebody in a graduation gown": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene2_10_0",
+     "scene2_10_1",
+     "neg3_10_0"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene2_10_1",
+     "scene2_10_0",
+     "scene_08-eloi"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "swap2_p06_2",
+     "swap2_p07_0",
+     "scene2_10_1"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene2_10_0",
+     "scene2_10_1",
+     "swap2_p06_2"
+    ]
+   }
+  },
+  "someone sitting in the driver seat": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene2_17_0",
+     "scene2_17_1",
+     "neg3_17_0"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene2_17_1",
+     "scene2_17_0",
+     "swap2_i02_1"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "swap2_i02_1",
+     "swap2_i02_0",
+     "scene2_17_1"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene2_17_0",
+     "swap2_i02_1",
+     "swap2_i02_0"
+    ]
+   }
+  },
+  "lab scientist portrait": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 0.3333333333333333,
+    "top3": [
+     "swap_p07_2",
+     "swap_p07_3",
+     "swap2_i01_0"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 0.0,
+    "top3": [
+     "scene_15-underworld",
+     "ref_morlock",
+     "scene_21-flowers"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 0.0,
+    "top3": [
+     "scene_04-return",
+     "scene_15-underworld",
+     "ref_morlock"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "swap2_i01_0",
+     "swap2_i01_1",
+     "scene_04-return"
+    ]
+   }
+  },
+  "person relaxing on the couch": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 0.0,
+    "top3": [
+     "scene_00_0",
+     "scene_00_1",
+     "scene_01_0"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene2_06_1",
+     "scene2_06_0",
+     "neg3_06_1"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "swap2_p04_0",
+     "swap2_p04_1",
+     "scene2_06_0"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "swap2_p04_1",
+     "swap2_p04_0",
+     "scene2_06_1"
+    ]
+   }
+  },
+  "bar with neon colored lighting": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 0.3333333333333333,
+    "top3": [
+     "scene_02_0",
+     "scene_02_1",
+     "scene2_13_0"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 0.0,
+    "top3": [
+     "scene_03-laboratory",
+     "scene_15-underworld",
+     "scene_21-flowers"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 0.0,
+    "top3": [
+     "scene_03-laboratory",
+     "scene_04-return",
+     "scene_05-departure"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "neg3_13_0",
+     "neg3_13_1",
+     "swap2_p08_2"
+    ]
+   }
+  },
+  "shopping at the market": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_00_0",
+     "scene_00_1",
+     "scene_01_0"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_00_1",
+     "scene_00_0",
+     "scene2_02_1"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "swap_i00_0",
+     "swap_p00_0",
+     "swap_p00_1"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "swap_p00_1",
+     "scene_00_1",
+     "scene_00_0"
+    ]
+   }
+  },
+  "cafe portrait laughing": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "swap_p00_3",
+     "swap_p00_2",
+     "swap_p07_2"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_01_1",
+     "scene_01_0",
+     "swap_p00_2"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_01_1",
+     "scene_01_0",
+     "swap_p00_2"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "swap_p00_2",
+     "swap_p00_3",
+     "swap_i05_2"
+    ]
+   }
+  },
+  "person walking under an umbrella": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 0.3333333333333333,
+    "top3": [
+     "scene_02_0",
+     "scene_02_1",
+     "scene_14_0"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_14_1",
+     "scene_14_0",
+     "swap_i03_2"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_14_0",
+     "scene_14_1",
+     "swap_i03_2"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_14_0",
+     "scene_14_1",
+     "scene_02_0"
+    ]
+   }
+  },
+  "studio headphones recording": {
+   "keyword (all words)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_17_0",
+     "scene_17_1",
+     "swap_p08_2"
+    ]
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_17_0",
+     "scene_17_1",
+     "swap_p08_2"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_17_1",
+     "scene_17_0",
+     "swap_p02_3"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_17_0",
+     "scene_17_1",
+     "swap_p08_3"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_17_0",
+     "scene_17_1",
+     "swap_p08_2"
+    ]
+   }
+  },
+  "person on a bike in the netherlands": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 0.0,
+    "top3": [
+     "scene_00_0",
+     "scene_00_1",
+     "scene_01_0"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_11_1",
+     "scene_11_0",
+     "swap_p05_3"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_11_1",
+     "scene_11_0",
+     "swap_p05_3"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_11_0",
+     "scene_11_1",
+     "scene_13_1"
+    ]
+   }
+  },
+  "someone on a train": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_09_0",
+     "scene_09_1",
+     "swap_p04_2"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_09_1",
+     "scene_09_0",
+     "cutout_jeans-indigo"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_09_0",
+     "scene_09_1",
+     "swap_p04_3"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_09_1",
+     "scene_09_0",
+     "swap_p04_2"
+    ]
+   }
+  },
+  "public speaker at a press conference": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_19_0",
+     "scene_19_1",
+     "nsfwneg_00_0"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_19_1",
+     "scene_19_0",
+     "fit_d8c94822b41a1dc6"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "swap_i05_1",
+     "swap_p09_2",
+     "swap_p09_3"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "swap_i05_1",
+     "swap_p09_2",
+     "swap_p09_3"
+    ]
+   }
+  },
+  "person lifting at the gym": {
+   "keyword (all words)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_16_0",
+     "scene_16_1",
+     "swap_p08_0"
+    ]
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_16_0",
+     "scene_16_1",
+     "swap_p08_0"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_16_1",
+     "scene_16_0",
+     "scene_13_1"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_16_0",
+     "scene_16_1",
+     "swap_i04_1"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_16_0",
+     "scene_16_1",
+     "swap_p08_0"
+    ]
+   }
+  },
+  "storefront signage mockup": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "logoscene_04_0",
+     "logoscene_04_1"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "logoscene_04_1",
+     "logoscene_04_0",
+     "scene_07-sphinx"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "logoscene_04_0",
+     "logoscene_04_1",
+     "scene_03-laboratory"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "logoscene_04_0",
+     "logoscene_04_1",
+     "scene_14-shaft"
+    ]
+   }
+  },
+  "cap on a table": {
+   "keyword (all words)": {
+    "MRR": 1.0,
+    "top3": [
+     "logoscene_05_0",
+     "logoscene_05_1"
+    ]
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "logoscene_05_0",
+     "logoscene_05_1",
+     "logoscene_01_0"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 0.0,
+    "top3": [
+     "bloop_ref",
+     "ref_traveller",
+     "swap_i02_2"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 0.0,
+    "top3": [
+     "scene_04-return",
+     "swap2_i02_1",
+     "swap_i02_1"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "logoscene_05_0",
+     "logoscene_05_1",
+     "scene_04-return"
+    ]
+   }
+  },
+  "coffee mug branding": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 0.3333333333333333,
+    "top3": [
+     "scene_01_0",
+     "scene_01_1",
+     "logoscene_01_0"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "logoscene_01_1",
+     "logoscene_01_0",
+     "scene_01_1"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "logoscene_01_1",
+     "logoscene_01_0",
+     "scene_01_1"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "logoscene_01_1",
+     "logoscene_01_0",
+     "scene_01_1"
+    ]
+   }
+  },
+  "highway billboard": {
+   "keyword (all words)": {
+    "MRR": 1.0,
+    "top3": [
+     "logoscene_07_0",
+     "logoscene_07_1"
+    ]
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "logoscene_07_0",
+     "logoscene_07_1"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "logoscene_07_1",
+     "logoscene_07_0",
+     "logoscene_02_1"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "logoscene_07_0",
+     "logoscene_07_1",
+     "scene_03-laboratory"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "logoscene_07_0",
+     "logoscene_07_1",
+     "scene_19-crab"
+    ]
+   }
+  },
+  "cardboard box delivery": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "logoscene_09_0",
+     "logoscene_09_1",
+     "logoscene_02_0"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "logoscene_09_1",
+     "logoscene_09_0",
+     "scene_15-underworld"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "logoscene_09_0",
+     "logoscene_09_1",
+     "scene_15-underworld"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "logoscene_09_0",
+     "logoscene_09_1",
+     "scene_15-underworld"
+    ]
+   }
+  },
+  "can of soda on a picnic table": {
+   "keyword (all words)": {
+    "MRR": 1.0,
+    "top3": [
+     "logoscene_06_0",
+     "logoscene_06_1"
+    ]
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "logoscene_06_0",
+     "logoscene_06_1",
+     "logoscene_01_0"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "logoscene_06_1",
+     "logoscene_06_0",
+     "scene_21-flowers"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "logoscene_06_0",
+     "logoscene_06_1",
+     "scene_01-fireside"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "logoscene_06_0",
+     "logoscene_06_1",
+     "scene_04-return"
+    ]
+   }
+  },
+  "marble statue": {
+   "keyword (all words)": {
+    "MRR": 1.0,
+    "top3": [
+     "nsfwneg_03_0",
+     "nsfwneg_03_1"
+    ]
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "nsfwneg_03_0",
+     "nsfwneg_03_1",
+     "logoscene_14_0"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "nsfwneg_03_1",
+     "nsfwneg_03_0",
+     "scene_07-sphinx"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "nsfwneg_03_1",
+     "nsfwneg_03_0",
+     "scene_17-palace"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "nsfwneg_03_0",
+     "nsfwneg_03_1",
+     "scene_07-sphinx"
+    ]
+   }
+  },
+  "yoga class": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "nsfwneg_02_0",
+     "nsfwneg_02_1"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 0.0,
+    "top3": [
+     "scene_02-model",
+     "scene_01-fireside",
+     "scene_15-underworld"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 0.0,
+    "top3": [
+     "scene_02-model",
+     "scene_16-stars",
+     "scene_13-eyes"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 0.0,
+    "top3": [
+     "scene_02-model",
+     "scene_16-stars",
+     "scene_13-eyes"
+    ]
+   }
+  },
+  "ballet dancer": {
+   "keyword (all words)": {
+    "MRR": 1.0,
+    "top3": [
+     "nsfwneg_07_0",
+     "nsfwneg_07_1"
+    ]
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "nsfwneg_07_0",
+     "nsfwneg_07_1"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "nsfwneg_07_1",
+     "nsfwneg_07_0",
+     "fit_d8c94822b41a1dc6"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "nsfwneg_07_0",
+     "nsfwneg_07_1",
+     "fit_cdb439def78ad6ac"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "nsfwneg_07_0",
+     "nsfwneg_07_1",
+     "fit_cdb439def78ad6ac"
+    ]
+   }
+  },
+  "swimmer at a public pool": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "nsfwneg_00_0",
+     "nsfwneg_00_1"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "nsfwneg_00_1",
+     "nsfwneg_00_0",
+     "scene_12-weena"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "nsfwneg_00_0",
+     "nsfwneg_00_1",
+     "scene_12-weena"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "nsfwneg_00_0",
+     "nsfwneg_00_1",
+     "scene_12-weena"
+    ]
+   }
+  },
+  "mother and newborn": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "nsfwneg_14_0",
+     "nsfwneg_14_1"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 0.3333333333333333,
+    "top3": [
+     "mitosis_key2",
+     "mitosis_shot1",
+     "nsfwneg_14_1"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 0.2,
+    "top3": [
+     "mitosis_key2",
+     "mitosis_shot1",
+     "scene_17-palace"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "nsfwneg_14_0",
+     "nsfwneg_14_1",
+     "mitosis_key2"
+    ]
+   }
+  },
+  "time machine in the lab": {
+   "keyword (all words)": {
+    "MRR": 1.0,
+    "top3": [
+     "clip_05-departure"
+    ]
+   },
+   "keyword (any word)": {
+    "MRR": 0.3333333333333333,
+    "top3": [
+     "scene_06-centuries",
+     "scene_02-model",
+     "clip_05-departure"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 0.14285714285714285,
+    "top3": [
+     "scene_02-model",
+     "scene_21-flowers",
+     "scene_06-centuries"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "clip_05-departure",
+     "scene_05-departure",
+     "ref_machine"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "clip_05-departure",
+     "scene_06-centuries",
+     "ref_machine"
+    ]
+   }
+  },
+  "burning trees and creatures": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "clip_18-fire",
+     "ref_morlock",
+     "scene_06-centuries"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 0.25,
+    "top3": [
+     "scene_06-centuries",
+     "scene_21-flowers",
+     "scene_10-sunset"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 0.0,
+    "top3": [
+     "scene_06-centuries",
+     "scene_08-eloi",
+     "scene_14-shaft"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "clip_18-fire",
+     "scene_06-centuries",
+     "scene_08-eloi"
+    ]
+   }
+  },
+  "huge red sun over a dead sea": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "clip_20-eclipse",
+     "scene_19-crab",
+     "scene_20-eclipse"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 0.25,
+    "top3": [
+     "swap_i01_2",
+     "scene_07_1",
+     "scene_07_0"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_19-crab",
+     "scene_10-sunset",
+     "clip_07-sphinx"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_19-crab",
+     "clip_20-eclipse",
+     "scene_20-eclipse"
+    ]
+   }
+  },
+  "the girl asleep on the hillside": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 0.5,
+    "top3": [
+     "scene_06-centuries",
+     "scene_16-stars"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_16-stars",
+     "protected_08_0",
+     "swap_p08_1"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_16-stars",
+     "protected_08_0",
+     "swap_p08_2"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_16-stars",
+     "protected_08_0",
+     "swap_p08_3"
+    ]
+   }
+  },
+  "museum with a brontosaurus": {
+   "keyword (all words)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_17-palace"
+    ]
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_17-palace",
+     "nsfwneg_03_0",
+     "nsfwneg_03_1"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 0.0,
+    "top3": [
+     "scene_07-sphinx",
+     "cutout_breton",
+     "cutout_tee-black"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_17-palace",
+     "scene_03-laboratory",
+     "ref_traveller"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_17-palace",
+     "nsfwneg_03_0",
+     "nsfwneg_03_1"
+    ]
+   }
+  },
+  "pale underground creatures": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "clip_18-fire",
+     "ref_morlock",
+     "ref_weena"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 0.5,
+    "top3": [
+     "cutout_hoodie-grey",
+     "scene_15-underworld",
+     "cutout_jeans-indigo"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 0.25,
+    "top3": [
+     "scene_02-model",
+     "mitosis_key0",
+     "cutout_hoodie-grey"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_15-underworld",
+     "ref_morlock",
+     "clip_18-fire"
+    ]
+   }
+  },
+  "winged sphinx at night": {
+   "keyword (all words)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_11-gone"
+    ]
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_11-gone",
+     "clip_07-sphinx",
+     "scene_07-sphinx"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 0.0,
+    "top3": [
+     "swap_i00_1",
+     "swap_p01_1",
+     "swap_p01_0"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 0.1,
+    "top3": [
+     "swap_i00_1",
+     "swap_p01_0",
+     "swap_p01_1"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_11-gone",
+     "clip_07-sphinx",
+     "scene_07-sphinx"
+    ]
+   }
+  },
+  "rescuing someone from a river": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_12-weena",
+     "scene_10-sunset"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_12-weena",
+     "scene_10-sunset",
+     "scene_11_1"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_12-weena",
+     "photosynthesis_shot0",
+     "mitosis_key0"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_12-weena",
+     "scene_10-sunset",
+     "photosynthesis_shot0"
+    ]
+   }
+  },
+  "victorian dinner party": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_01-fireside",
+     "scene_04-return",
+     "ref_machine"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_01-fireside",
+     "scene_04-return",
+     "scene_09-hall"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_04-return",
+     "scene_01-fireside",
+     "photosynthesis_shot1"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_01-fireside",
+     "scene_04-return",
+     "scene_03-laboratory"
+    ]
+   }
+  },
+  "model time machine disappearing": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_02-model",
+     "scene_06-centuries",
+     "ref_machine"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_02-model",
+     "scene_06-centuries",
+     "ref_machine"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_02-model",
+     "scene_06-centuries",
+     "ref_machine"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "scene_02-model",
+     "scene_06-centuries",
+     "ref_machine"
+    ]
+   }
+  },
+  "cartoon cell splitting": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 0.3333333333333333,
+    "top3": [
+     "photosynthesis_key0",
+     "mitosis_shot0",
+     "mitosis_shot1"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 0.5,
+    "top3": [
+     "bloop_ref",
+     "mitosis_shot1",
+     "photosynthesis_music"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 0.3333333333333333,
+    "top3": [
+     "bloop_ref",
+     "photosynthesis_shot0",
+     "mitosis_shot1"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 0.5,
+    "top3": [
+     "bloop_ref",
+     "mitosis_shot1",
+     "photosynthesis_key0"
+    ]
+   }
+  },
+  "leaf cell with sunglasses": {
+   "keyword (all words)": {
+    "MRR": 1.0,
+    "top3": [
+     "photosynthesis_key0"
+    ]
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "photosynthesis_key0",
+     "scene2_15_0",
+     "scene2_15_1"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 0.0,
+    "top3": [
+     "swap_i04_0",
+     "swap_i03_2",
+     "swap_p07_1"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 0.0,
+    "top3": [
+     "swap_i04_0",
+     "swap_i03_2",
+     "swap_p07_0"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "photosynthesis_key0",
+     "swap_i04_0",
+     "swap_i03_2"
+    ]
+   }
+  },
+  "oxygen bubbles cartoon": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 0.3333333333333333,
+    "top3": [
+     "photosynthesis_key0",
+     "photosynthesis_shot0",
+     "photosynthesis_shot1"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 0.25,
+    "top3": [
+     "photosynthesis_key0",
+     "photosynthesis_shot0",
+     "mitosis_shot0"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 0.25,
+    "top3": [
+     "photosynthesis_key0",
+     "photosynthesis_shot0",
+     "mitosis_shot0"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 0.3333333333333333,
+    "top3": [
+     "photosynthesis_key0",
+     "photosynthesis_shot0",
+     "photosynthesis_shot1"
+    ]
+   }
+  },
+  "mitosis animation": {
+   "keyword (all words)": {
+    "MRR": 1.0,
+    "top3": [
+     "mitosis_shot0",
+     "mitosis_shot1"
+    ]
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "mitosis_shot0",
+     "mitosis_shot1",
+     "mitosis_key0"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 0.3333333333333333,
+    "top3": [
+     "mitosis_music",
+     "photosynthesis_music",
+     "mitosis_shot1"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 0.25,
+    "top3": [
+     "mitosis_music",
+     "photosynthesis_music",
+     "photosynthesis_shot0"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "mitosis_shot0",
+     "mitosis_shot1",
+     "mitosis_music"
+    ]
+   }
+  },
+  "runner silhouette mountain storm": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "run_04_hills",
+     "run_08_finish",
+     "scene_04_0"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "run_04_hills",
+     "scene_04_1",
+     "scene_04_0"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "run_04_hills",
+     "run_06_pr",
+     "run_07_raceday"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "run_04_hills",
+     "run_08_finish",
+     "run_06_pr"
+    ]
+   }
+  },
+  "sunrise river run aerial": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "run_02_route",
+     "nsfwneg_01_0",
+     "nsfwneg_01_1"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 0.25,
+    "top3": [
+     "scene_12-weena",
+     "run_06_pr",
+     "clip_20-eclipse"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "run_02_route",
+     "scene_12-weena",
+     "mitosis_key0"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "run_02_route",
+     "scene_12-weena",
+     "scene_10-sunset"
+    ]
+   }
+  },
+  "rainy night running shoes": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "run_03_rain",
+     "clip_05-departure",
+     "scene_02_0"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "run_03_rain",
+     "scene_02_1",
+     "scene_02_0"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "run_03_rain",
+     "scene_02_0",
+     "scene_02_1"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "run_03_rain",
+     "scene_02_1",
+     "scene_02_0"
+    ]
+   }
+  },
+  "crossing the finish line": {
+   "keyword (all words)": {
+    "MRR": 1.0,
+    "top3": [
+     "run_08_finish",
+     "scene_03-laboratory"
+    ]
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "run_08_finish",
+     "scene_03-laboratory",
+     "ref_machine"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 0.125,
+    "top3": [
+     "scene_04_1",
+     "scene_04_0",
+     "scene_02_1"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 0.3333333333333333,
+    "top3": [
+     "scene_08-eloi",
+     "scene_06-centuries",
+     "run_08_finish"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "run_08_finish",
+     "scene_03-laboratory",
+     "scene_06-centuries"
+    ]
+   }
+  },
+  "streetlight before dawn runner": {
+   "keyword (all words)": {
+    "MRR": 1.0,
+    "top3": [
+     "run_01_alarm"
+    ]
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "run_01_alarm",
+     "run_06_pr",
+     "run_02_route"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "run_01_alarm",
+     "run_05_streak",
+     "run_04_hills"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 0.3333333333333333,
+    "top3": [
+     "run_07_raceday",
+     "run_08_finish",
+     "run_01_alarm"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "run_01_alarm",
+     "run_06_pr",
+     "run_07_raceday"
+    ]
+   }
+  },
+  "camel coat": {
+   "keyword (all words)": {
+    "MRR": 0.0,
+    "top3": []
+   },
+   "keyword (any word)": {
+    "MRR": 0.5,
+    "top3": [
+     "scene_08-eloi",
+     "closet_coat-camel",
+     "scene2_05_0"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "closet_coat-camel",
+     "cutout_coat-camel",
+     "ref_traveller"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "closet_coat-camel",
+     "cutout_coat-camel",
+     "ref_morlock"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "closet_coat-camel",
+     "scene_08-eloi",
+     "cutout_coat-camel"
+    ]
+   }
+  },
+  "white oxford": {
+   "keyword (all words)": {
+    "MRR": 1.0,
+    "top3": [
+     "closet_oxford-white",
+     "cutout_oxford-white"
+    ]
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "closet_oxford-white",
+     "cutout_oxford-white",
+     "protected_06_0"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "cutout_oxford-white",
+     "cutout_breton",
+     "cutout_tee-black"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "cutout_oxford-white",
+     "mitosis_key0",
+     "cutout_breton"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "cutout_oxford-white",
+     "closet_oxford-white",
+     "scene_08-eloi"
+    ]
+   }
+  },
+  "denim jacket": {
+   "keyword (all words)": {
+    "MRR": 1.0,
+    "top3": [
+     "closet_jacket-denim",
+     "cutout_jacket-denim"
+    ]
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "closet_jacket-denim",
+     "cutout_jacket-denim",
+     "scene2_11_0"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 0.125,
+    "top3": [
+     "fit_dd3e719aa3d3d4b3",
+     "fit_d8c94822b41a1dc6",
+     "fit_cdb439def78ad6ac"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 0.1111111111111111,
+    "top3": [
+     "scene_02-model",
+     "fit_d8c94822b41a1dc6",
+     "fit_0fb3813a892c18d3"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "cutout_jacket-denim",
+     "closet_jacket-denim",
+     "neg3_11_0"
+    ]
+   }
+  },
+  "charcoal trousers": {
+   "keyword (all words)": {
+    "MRR": 1.0,
+    "top3": [
+     "closet_trousers-charcoal",
+     "cutout_trousers-charcoal",
+     "ref_traveller"
+    ]
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "closet_trousers-charcoal",
+     "ref_traveller",
+     "cutout_trousers-charcoal"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "cutout_trousers-charcoal",
+     "closet_trousers-charcoal",
+     "cutout_shorts-olive"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "cutout_trousers-charcoal",
+     "scene_15-underworld",
+     "closet_trousers-charcoal"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "closet_trousers-charcoal",
+     "cutout_trousers-charcoal",
+     "ref_traveller"
+    ]
+   }
+  },
+  "navy crewneck": {
+   "keyword (all words)": {
+    "MRR": 1.0,
+    "top3": [
+     "closet_crew-navy",
+     "cutout_crew-navy"
+    ]
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "closet_crew-navy",
+     "cutout_crew-navy"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "cutout_crew-navy",
+     "closet_crew-navy",
+     "ref_morlock"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "cutout_crew-navy",
+     "closet_crew-navy",
+     "clip_18-fire"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "closet_crew-navy",
+     "cutout_crew-navy",
+     "clip_18-fire"
+    ]
+   }
+  },
+  "olive shorts": {
+   "keyword (all words)": {
+    "MRR": 1.0,
+    "top3": [
+     "closet_shorts-olive",
+     "cutout_shorts-olive"
+    ]
+   },
+   "keyword (any word)": {
+    "MRR": 1.0,
+    "top3": [
+     "closet_shorts-olive",
+     "cutout_shorts-olive",
+     "protected_02_0"
+    ]
+   },
+   "vector (whole prompt)": {
+    "MRR": 1.0,
+    "top3": [
+     "cutout_shorts-olive",
+     "closet_shorts-olive",
+     "cutout_breton"
+    ]
+   },
+   "vector (+ sentence chunks)": {
+    "MRR": 1.0,
+    "top3": [
+     "cutout_shorts-olive",
+     "closet_shorts-olive",
+     "scene_15-underworld"
+    ]
+   },
+   "hybrid (RRF)": {
+    "MRR": 1.0,
+    "top3": [
+     "closet_shorts-olive",
+     "cutout_shorts-olive",
+     "scene_15-underworld"
+    ]
+   }
+  }
+ }
+}

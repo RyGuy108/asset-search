@@ -1,0 +1,71 @@
+{
+ "n": 1000,
+ "examples": [
+  [
+   "painting a beautiful woman taking a picture with her smart phone",
+   "1268"
+  ],
+  [
+   "train riding cyberpunk",
+   "1374"
+  ],
+  [
+   "baby milk",
+   "1818"
+  ],
+  [
+   "film sleepy calico",
+   "2988"
+  ],
+  [
+   "sitting midle",
+   "3217"
+  ],
+  [
+   "woman sitting couch laptop",
+   "3716"
+  ],
+  [
+   "group elephants open grassy field",
+   "4229"
+  ],
+  [
+   "statue dinosaur",
+   "4551"
+  ],
+  [
+   "small table laptop top",
+   "5804"
+  ],
+  [
+   "miniature cell phone resting",
+   "5860"
+  ]
+ ],
+ "systems": {
+  "keyword (all words)": {
+   "R@1": 0.026,
+   "R@10": 0.039,
+   "MRR@10": 0.03,
+   "empty": 0.876
+  },
+  "keyword (any word)": {
+   "R@1": 0.181,
+   "R@10": 0.471,
+   "MRR@10": 0.265,
+   "empty": 0.004
+  },
+  "vector": {
+   "R@1": 0.387,
+   "R@10": 0.759,
+   "MRR@10": 0.506,
+   "empty": 0.0
+  },
+  "hybrid (RRF)": {
+   "R@1": 0.267,
+   "R@10": 0.59,
+   "MRR@10": 0.36,
+   "empty": 0.0
+  }
+ }
+}

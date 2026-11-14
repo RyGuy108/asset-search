@@ -1,0 +1,12 @@
+vocab 8,170  train images 36,504  params 20,539,649
+epoch  1  loss 3.738  dev R@10 (1k imgs) 0.640  424s
+epoch  2  loss 2.556  dev R@10 (1k imgs) 0.679  473s
+epoch  3  loss 2.293  dev R@10 (1k imgs) 0.725  429s
+epoch  4  loss 2.129  dev R@10 (1k imgs) 0.723  425s
+epoch  5  loss 2.009  dev R@10 (1k imgs) 0.724  437s
+epoch  6  loss 1.924  dev R@10 (1k imgs) 0.751  467s
+epoch  7  loss 1.823  dev R@10 (1k imgs) 0.758  477s
+epoch  8  loss 1.769  dev R@10 (1k imgs) 0.764  450s
+epoch  9  loss 1.704  dev R@10 (1k imgs) 0.772  415s
+epoch 10  loss 1.717  dev R@10 (1k imgs) 0.774  419s
+best dev R@10 0.774 -> models/encoder

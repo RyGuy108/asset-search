@@ -1,0 +1,212 @@
+[
+ {
+  "kw_weight": 4.0,
+  "coverage_power": 3.0,
+  "library dev": 0.9231366459627329,
+  "coco dev": 0.44725396825396824,
+  "mean": 0.6851953071083505
+ },
+ {
+  "kw_weight": 4.0,
+  "coverage_power": 4.0,
+  "library dev": 0.8911318150448585,
+  "coco dev": 0.47386388888888886,
+  "mean": 0.6824978519668736
+ },
+ {
+  "kw_weight": 3.0,
+  "coverage_power": 3.0,
+  "library dev": 0.904848171152519,
+  "coco dev": 0.4597380952380952,
+  "mean": 0.6822931331953072
+ },
+ {
+  "kw_weight": 3.0,
+  "coverage_power": 4.0,
+  "library dev": 0.8831205429031516,
+  "coco dev": 0.4803218253968254,
+  "mean": 0.6817211841499885
+ },
+ {
+  "kw_weight": 2.0,
+  "coverage_power": 4.0,
+  "library dev": 0.8717563837129054,
+  "coco dev": 0.48715396825396823,
+  "mean": 0.6794551759834369
+ },
+ {
+  "kw_weight": 2.0,
+  "coverage_power": 2.0,
+  "library dev": 0.9158902691511387,
+  "coco dev": 0.4421313492063492,
+  "mean": 0.6790108091787439
+ },
+ {
+  "kw_weight": 2.0,
+  "coverage_power": 3.0,
+  "library dev": 0.8846100759144238,
+  "coco dev": 0.47203253968253966,
+  "mean": 0.6783213077984818
+ },
+ {
+  "kw_weight": 1.0,
+  "coverage_power": 3.0,
+  "library dev": 0.8632533931446975,
+  "coco dev": 0.48705873015873014,
+  "mean": 0.6751560616517138
+ },
+ {
+  "kw_weight": 1.0,
+  "coverage_power": 4.0,
+  "library dev": 0.8530567057740971,
+  "coco dev": 0.49698174603174605,
+  "mean": 0.6750192259029215
+ },
+ {
+  "kw_weight": 1.0,
+  "coverage_power": 2.0,
+  "library dev": 0.8814268461007592,
+  "coco dev": 0.46757023809523807,
+  "mean": 0.6744985420979986
+ },
+ {
+  "kw_weight": 3.0,
+  "coverage_power": 2.0,
+  "library dev": 0.9231366459627329,
+  "coco dev": 0.42582103174603175,
+  "mean": 0.6744788388543823
+ },
+ {
+  "kw_weight": 4.0,
+  "coverage_power": 2.0,
+  "library dev": 0.9270013802622499,
+  "coco dev": 0.4185785714285714,
+  "mean": 0.6727899758454107
+ },
+ {
+  "kw_weight": 0.5,
+  "coverage_power": 3.0,
+  "library dev": 0.844824016563147,
+  "coco dev": 0.4963563492063492,
+  "mean": 0.670590182884748
+ },
+ {
+  "kw_weight": 0.5,
+  "coverage_power": 2.0,
+  "library dev": 0.8534190246146768,
+  "coco dev": 0.4869702380952381,
+  "mean": 0.6701946313549574
+ },
+ {
+  "kw_weight": 1.0,
+  "coverage_power": 1.0,
+  "library dev": 0.9001897860593513,
+  "coco dev": 0.4357261904761905,
+  "mean": 0.6679579882677709
+ },
+ {
+  "kw_weight": 0.5,
+  "coverage_power": 4.0,
+  "library dev": 0.834247757073844,
+  "coco dev": 0.5015670634920635,
+  "mean": 0.6679074102829538
+ },
+ {
+  "kw_weight": 2.0,
+  "coverage_power": 1.0,
+  "library dev": 0.9233781918564528,
+  "coco dev": 0.4061829365079365,
+  "mean": 0.6647805641821947
+ },
+ {
+  "kw_weight": 0.5,
+  "coverage_power": 1.0,
+  "library dev": 0.8576863354037267,
+  "coco dev": 0.4630095238095238,
+  "mean": 0.6603479296066253
+ },
+ {
+  "kw_weight": 0.25,
+  "coverage_power": 2.0,
+  "library dev": 0.8188060731538992,
+  "coco dev": 0.49733015873015873,
+  "mean": 0.658068115942029
+ },
+ {
+  "kw_weight": 3.0,
+  "coverage_power": 1.0,
+  "library dev": 0.9246463077984817,
+  "coco dev": 0.3899468253968254,
+  "mean": 0.6572965665976536
+ },
+ {
+  "kw_weight": 0.25,
+  "coverage_power": 3.0,
+  "library dev": 0.8066885208189556,
+  "coco dev": 0.5028781746031746,
+  "mean": 0.6547833477110652
+ },
+ {
+  "kw_weight": 0.25,
+  "coverage_power": 1.0,
+  "library dev": 0.8221100759144238,
+  "coco dev": 0.48278373015873016,
+  "mean": 0.6524469030365769
+ },
+ {
+  "kw_weight": 4.0,
+  "coverage_power": 1.0,
+  "library dev": 0.9236801242236025,
+  "coco dev": 0.3803543650793651,
+  "mean": 0.6520172446514838
+ },
+ {
+  "kw_weight": 0.25,
+  "coverage_power": 4.0,
+  "library dev": 0.7879802162410858,
+  "coco dev": 0.5049797619047619,
+  "mean": 0.6464799890729238
+ },
+ {
+  "kw_weight": 0.5,
+  "coverage_power": 0.0,
+  "library dev": 0.8428916494133886,
+  "coco dev": 0.4312047619047619,
+  "mean": 0.6370482056590753
+ },
+ {
+  "kw_weight": 1.0,
+  "coverage_power": 0.0,
+  "library dev": 0.8606567747872096,
+  "coco dev": 0.40681944444444446,
+  "mean": 0.633738109615827
+ },
+ {
+  "kw_weight": 0.25,
+  "coverage_power": 0.0,
+  "library dev": 0.8061076604554865,
+  "coco dev": 0.45987896825396823,
+  "mean": 0.6329933143547274
+ },
+ {
+  "kw_weight": 2.0,
+  "coverage_power": 0.0,
+  "library dev": 0.8790545203588682,
+  "coco dev": 0.3790904761904762,
+  "mean": 0.6290724982746723
+ },
+ {
+  "kw_weight": 3.0,
+  "coverage_power": 0.0,
+  "library dev": 0.888080860363469,
+  "coco dev": 0.3602964285714286,
+  "mean": 0.6241886444674488
+ },
+ {
+  "kw_weight": 4.0,
+  "coverage_power": 0.0,
+  "library dev": 0.8901224982746722,
+  "coco dev": 0.3454527777777778,
+  "mean": 0.6177876380262249
+ }
+]
