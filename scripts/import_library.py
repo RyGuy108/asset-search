@@ -40,7 +40,8 @@ def moderation(root: Path):
             # A face swap has no prompt; it inherits the text of both inputs.
             derived=f"face swap. face: {src['prompt'] if src else 'uploaded photo'}. "
                     f"scene: {dst['prompt'] if dst else 'uploaded photo'}",
-            parents=[x["key"] for x in (src, dst) if x], path=None, project="content-moderation", credits=r["credits"],
+            parents=[x["key"] for x in (src, dst) if x],
+            path=str(base / paths[r["id"]][0]) if paths.get(r["id"]) else None, project="content-moderation", credits=r["credits"],
         ))
     return out
 

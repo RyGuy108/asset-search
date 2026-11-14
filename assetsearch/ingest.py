@@ -55,7 +55,7 @@ def insert_assets(conn: Connection, user_id: str, assets: list[dict], emb: Embed
                 """INSERT INTO assets (user_id, key, mh_id, kind, tool, model, prompt, search_text, path, url, credits, embedding)
                    VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s::halfvec)
                    ON CONFLICT (user_id, key) DO UPDATE SET search_text = EXCLUDED.search_text,
-                       embedding = EXCLUDED.embedding, prompt = EXCLUDED.prompt
+                       embedding = EXCLUDED.embedding, prompt = EXCLUDED.prompt, path = EXCLUDED.path
                    RETURNING id""",
                 (user_id, a["key"], a.get("mh_id"), a["kind"], a["tool"], a.get("model"), a.get("prompt"), t,
                  a.get("path"), a.get("url"), a.get("credits"), to_halfvec(v)),
