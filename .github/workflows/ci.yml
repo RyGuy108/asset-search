@@ -1,0 +1,29 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: pgvector/pgvector:0.8.1-pg16
+        env: { POSTGRES_PASSWORD: postgres, POSTGRES_DB: assets }
+        ports: ["5432:5432"]
+        options: --health-cmd pg_isready --health-interval 5s --health-retries 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.13" }
+      - run: pip install --index-url https://download.pytorch.org/whl/cpu torch && pip install -r requirements.txt
+      - run: pytest -q
+      - name: library eval (dev + held-out queries) against a real Postgres
+        run: |
+          python scripts/eval_library.py --library data/library.jsonl
+          python scripts/eval_library.py --queries eval/queries_holdout.tsv --out results/ci_holdout.json
+  web:
+    runs-on: ubuntu-latest
+    defaults: { run: { working-directory: web } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: npm ci && npm run build
