@@ -102,12 +102,14 @@ class VariantReq(BaseModel):
     n: int = Field(4, ge=1, le=8)
     instruction: str | None = Field(None, description='e.g. "make it night time"')
     style_like: str | None = Field(None, description='borrow the style of your best match, e.g. "my lithograph scenes"')
+    mode: Literal["regenerate", "edit"] = Field(
+        "regenerate", description="regenerate: new text-to-image renders (~5 credits); edit: keep the exact subject via the image editor")
     dry_run: bool = False
 
 
 @app.post("/users/{user_id}/assets/{asset_id}/variants")
 def make_variants(user_id: str, asset_id: int, req: VariantReq):
-    from .variants import create_job, plan_variants
+    from .variants import create_job, plan_edits, plan_variants
 
     with pool.connection() as c:
         if req.dry_run:
@@ -115,9 +117,10 @@ def make_variants(user_id: str, asset_id: int, req: VariantReq):
                           (asset_id, user_id)).fetchone()
             if not r:
                 raise HTTPException(404)
-            return {"prompts": plan_variants(r[0], req.n, req.instruction, seed=asset_id)}
+            planner = plan_edits if req.mode == "edit" else plan_variants
+            return {"prompts": planner(r[0], req.n, req.instruction, seed=asset_id)}
         try:
-            job_id, prompts = create_job(c, user_id, asset_id, req.n, req.instruction, req.style_like)
+            job_id, prompts = create_job(c, user_id, asset_id, req.n, req.instruction, req.style_like, req.mode)
         except KeyError:
             raise HTTPException(404)
     from redis import Redis
@@ -131,11 +134,11 @@ def make_variants(user_id: str, asset_id: int, req: VariantReq):
 @app.get("/jobs/{job_id}")
 def job_status(job_id: int):
     with pool.connection() as c:
-        r = c.execute("SELECT id, user_id, source_id, prompts, status, mh_ids, result_ids, credits, error FROM variant_jobs WHERE id = %s",
+        r = c.execute("SELECT id, user_id, source_id, prompts, status, mh_ids, result_ids, credits, error, mode, model FROM variant_jobs WHERE id = %s",
                       (job_id,)).fetchone()
     if not r:
         raise HTTPException(404)
-    keys = ["id", "user_id", "source_id", "prompts", "status", "mh_ids", "result_ids", "credits", "error"]
+    keys = ["id", "user_id", "source_id", "prompts", "status", "mh_ids", "result_ids", "credits", "error", "mode", "model"]
     return dict(zip(keys, r))
 
 
