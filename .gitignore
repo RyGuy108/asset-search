@@ -6,3 +6,5 @@ data/media/
 web/node_modules/
 web/.next/
 .env
+dump.rdb
+models/encoder_v1/
