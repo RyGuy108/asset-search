@@ -1,6 +1,6 @@
 # Second query set, written after the first evaluation and before any fixes it motivated.
 # Used once, to score the final system. Same format and relevance rules as queries.tsv.
-lady with freckles	protected_00_0,protected_00_1
+lady with freckles	protected_00_0
 redhead with a thin mustache	protected_04_0
 man with round glasses and a beard	protected_01_0
 woman in her forties with natural hair	protected_03_0

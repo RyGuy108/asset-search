@@ -94,8 +94,14 @@ def main() -> None:
     }
     if args.tune:
         # Fusion weight sweep: run on the dev queries only, then fix the value for the held-out set.
-        for w in (0.25, 0.5, 0.75, 1.0, 1.5, 2.0):
+        for w in (0.5, 1.0, 1.5, 2.0, 3.0, 4.0):
             systems[f"hybrid kw_weight={w}"] = (lambda w: lambda q, v: search.hybrid(conn, USER, q, v, 10, kw_weight=w))(w)
+    # Objective "vocabulary mismatch" subset: queries where the keyword-any baseline finds
+    # nothing relevant in its top 10 *because no stemmed query word occurs in any relevant asset*.
+    def stems(t):
+        return set(conn.execute("SELECT coalesce(array_agg(lexeme), '{}') FROM unnest(to_tsvector('english', %s))", (t,)).fetchone()[0])
+    text_of = {a["key"]: search_text(a) for a in assets}
+    mismatch = {q for q, keys in queries if not (stems(q) & set().union(*(stems(text_of[k]) for k in expand(assets, keys))))}
     report, per_query = {}, defaultdict(dict)
     for name, fn in systems.items():
         rows, lat = [], []
@@ -110,15 +116,17 @@ def main() -> None:
             rows.append(m)
             per_query[q][name] = {"MRR": m["MRR"], "top3": ranked[:3]}
         report[name] = {k: round(statistics.mean(r[k] for r in rows), 3) for k in rows[0]}
+        mm = [r for r, (q, _) in zip(rows, queries) if q in mismatch]
+        report[name]["MRR (no shared words)"] = round(statistics.mean(r["MRR"] for r in mm), 3) if mm else None
         report[name]["p50 ms"] = round(statistics.median(lat), 2)
-    print(f"{len(assets)} assets, {len(queries)} queries\n")
-    cols = ["R@1", "R@5", "R@10", "hit@10", "MRR", "nDCG@10", "empty", "p50 ms"]
-    print(f"{'system':28s}" + "".join(f"{c:>9s}" for c in cols))
+    print(f"{len(assets)} assets, {len(queries)} queries, {len(mismatch)} share no stemmed word with any relevant asset\n")
+    cols = ["R@1", "R@5", "R@10", "hit@10", "MRR", "nDCG@10", "empty", "p50 ms", "MRR (no shared words)"]
+    print(f"{'system':28s}" + "".join(f"{c[:9]:>10s}" for c in cols))
     for name, m in report.items():
-        print(f"{name:28s}" + "".join(f"{m[c]:9.3f}" for c in cols))
+        print(f"{name:28s}" + "".join(f"{(m[c] if m[c] is not None else float('nan')):10.3f}" for c in cols))
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps({"n_assets": len(assets), "n_queries": len(queries), "systems": report,
-                                    "per_query": per_query}, indent=1))
+                                    "mismatch_queries": sorted(mismatch), "per_query": per_query}, indent=1))
 
 
 if __name__ == "__main__":

@@ -32,9 +32,10 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", type=Path, default=Path("models/encoder"))
     ap.add_argument("--out", type=Path, default=Path("results/coco_eval.json"))
+    ap.add_argument("--split", default="test", choices=["dev", "test"])
     args = ap.parse_args()
     rng = random.Random(42)
-    test = split_coco(Path("data/captions_val2014.json"))["test"]
+    test = split_coco(Path("data/captions_val2014.json"))[args.split]
     assets, queries = [], []
     for img, caps in sorted(test.items()):
         a, b = rng.sample(caps, 2)
@@ -44,15 +45,16 @@ def main() -> None:
     emb = Embedder(args.model)
     conn = db.connect()
     db.migrate(conn)
-    conn.execute("DELETE FROM assets WHERE user_id = %s", (USER,))
-    ids = insert_assets(conn, USER, assets, emb)
+    user = f"{USER}-{args.split}"
+    conn.execute("DELETE FROM assets WHERE user_id = %s", (user,))
+    ids = insert_assets(conn, user, assets, emb)
     key_of = {v: k for k, v in ids.items()}
     qvs = emb.encode([q for q, _ in queries])
     systems = {
-        "keyword (all words)": lambda q, v: search.keyword(conn, USER, q, 10),
-        "keyword (any word)": lambda q, v: search.keyword(conn, USER, q, 10, any_word=True),
-        "vector": lambda q, v: search.vector(conn, USER, v, 10),
-        "hybrid (RRF)": lambda q, v: search.hybrid(conn, USER, q, v, 10),
+        "keyword (all words)": lambda q, v: search.keyword(conn, user, q, 10),
+        "keyword (any word)": lambda q, v: search.keyword(conn, user, q, 10, any_word=True),
+        "vector": lambda q, v: search.vector(conn, user, v, 10),
+        "hybrid (RRF)": lambda q, v: search.hybrid(conn, user, q, v, 10),
     }
     report = {}
     for name, fn in systems.items():
