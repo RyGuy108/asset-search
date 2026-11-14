@@ -45,6 +45,7 @@ export default function Page() {
   const [open, setOpen] = useState<Detail | null>(null);
   const [instruction, setInstruction] = useState("");
   const [styleLike, setStyleLike] = useState("");
+  const [variantMode, setVariantMode] = useState<"edit" | "regenerate">("edit");
   const [job, setJob] = useState<Job | null>(null);
   const timer = useRef<ReturnType<typeof setTimeout>>(undefined);
 
@@ -74,7 +75,7 @@ export default function Page() {
     const r = await fetch(`${API}/users/${user}/assets/${open.id}/variants`, {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ n: 4, instruction: instruction || null, style_like: styleLike || null }),
+      body: JSON.stringify({ n: 4, mode: variantMode, instruction: instruction || null, style_like: styleLike || null }),
     }).then((r) => r.json());
     const poll = async () => {
       const j: Job = await fetch(`${API}/jobs/${r.job_id}`).then((r) => r.json());
@@ -145,6 +146,10 @@ export default function Page() {
                 <h3>Make variants</h3>
                 <input value={instruction} onChange={(e) => setInstruction(e.target.value)} placeholder="change… (optional, e.g. at night)" />
                 <input value={styleLike} onChange={(e) => setStyleLike(e.target.value)} placeholder="in the style of my… (optional)" />
+                <select value={variantMode} onChange={(e) => setVariantMode(e.target.value as "edit" | "regenerate")}>
+                  <option value="edit">Keep this exact subject (image editor, ~50 credits each)</option>
+                  <option value="regenerate">New takes on the prompt (text-to-image, ~5 credits each)</option>
+                </select>
                 <button onClick={variants} disabled={!!job && ["queued", "rendering"].includes(job.status)}>
                   Generate 4 with Magic Hour
                 </button>
