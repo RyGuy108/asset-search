@@ -1,0 +1,160 @@
+{
+ "summary": {
+  "edit": {
+   "images": 6,
+   "median_sift_inliers": 31.5,
+   "share_with_20+_inliers": 0.83,
+   "median_palette": 0.157,
+   "credits_per_image": 50.0
+  },
+  "regenerate": {
+   "images": 8,
+   "median_sift_inliers": 6.0,
+   "share_with_20+_inliers": 0.0,
+   "median_palette": 0.068,
+   "credits_per_image": 5.0
+  }
+ },
+ "images": [
+  {
+   "job": 1,
+   "mode": "regenerate",
+   "model": null,
+   "source": "logoscene_13_0",
+   "style": false,
+   "sift_inliers": 8,
+   "palette": 0.046,
+   "credits_per_image": 5.0
+  },
+  {
+   "job": 1,
+   "mode": "regenerate",
+   "model": null,
+   "source": "logoscene_13_0",
+   "style": false,
+   "sift_inliers": 7,
+   "palette": 0.069,
+   "credits_per_image": 5.0
+  },
+  {
+   "job": 1,
+   "mode": "regenerate",
+   "model": null,
+   "source": "logoscene_13_0",
+   "style": false,
+   "sift_inliers": 4,
+   "palette": 0.214,
+   "credits_per_image": 5.0
+  },
+  {
+   "job": 1,
+   "mode": "regenerate",
+   "model": null,
+   "source": "logoscene_13_0",
+   "style": false,
+   "sift_inliers": 8,
+   "palette": 0.02,
+   "credits_per_image": 5.0
+  },
+  {
+   "job": 2,
+   "mode": "regenerate",
+   "model": null,
+   "source": "closet_coat-camel",
+   "style": true,
+   "sift_inliers": 5,
+   "palette": 0.486,
+   "credits_per_image": 5.0
+  },
+  {
+   "job": 2,
+   "mode": "regenerate",
+   "model": null,
+   "source": "closet_coat-camel",
+   "style": true,
+   "sift_inliers": 5,
+   "palette": 0.037,
+   "credits_per_image": 5.0
+  },
+  {
+   "job": 2,
+   "mode": "regenerate",
+   "model": null,
+   "source": "closet_coat-camel",
+   "style": true,
+   "sift_inliers": 7,
+   "palette": 0.619,
+   "credits_per_image": 5.0
+  },
+  {
+   "job": 2,
+   "mode": "regenerate",
+   "model": null,
+   "source": "closet_coat-camel",
+   "style": true,
+   "sift_inliers": 4,
+   "palette": 0.066,
+   "credits_per_image": 5.0
+  },
+  {
+   "job": 3,
+   "mode": "edit",
+   "model": "nano-banana-2",
+   "source": "logoscene_13_0",
+   "style": false,
+   "sift_inliers": 56,
+   "palette": 0.161,
+   "credits_per_image": 50.0
+  },
+  {
+   "job": 4,
+   "mode": "edit",
+   "model": "nano-banana-2",
+   "source": "logoscene_13_0",
+   "style": false,
+   "sift_inliers": 64,
+   "palette": 0.153,
+   "credits_per_image": 50.0
+  },
+  {
+   "job": 4,
+   "mode": "edit",
+   "model": "nano-banana-2",
+   "source": "logoscene_13_0",
+   "style": false,
+   "sift_inliers": 20,
+   "palette": -0.027,
+   "credits_per_image": 50.0
+  },
+  {
+   "job": 4,
+   "mode": "edit",
+   "model": "nano-banana-2",
+   "source": "logoscene_13_0",
+   "style": false,
+   "sift_inliers": 7,
+   "palette": 0.345,
+   "credits_per_image": 50.0
+  },
+  {
+   "job": 5,
+   "mode": "edit",
+   "model": "nano-banana-2",
+   "source": "closet_coat-camel",
+   "style": true,
+   "sift_inliers": 30,
+   "palette": 0.274,
+   "credits_per_image": 50.0
+  },
+  {
+   "job": 5,
+   "mode": "edit",
+   "model": "nano-banana-2",
+   "source": "closet_coat-camel",
+   "style": true,
+   "sift_inliers": 33,
+   "palette": 0.067,
+   "credits_per_image": 50.0
+  }
+ ]
+}
