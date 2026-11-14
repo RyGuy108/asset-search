@@ -1,0 +1,195 @@
+{
+ "ef_search": 100,
+ "tiers": {
+  "whale (100,000 assets)": {
+   "exact": {
+    "p50_ms": 198.1,
+    "p99_ms": 259.01,
+    "recall@10_vs_exact": 1.0,
+    "short_results": 0.0
+   },
+   "planner default": {
+    "p50_ms": 2.77,
+    "p99_ms": 5.95,
+    "recall@10_vs_exact": 0.9,
+    "short_results": 0.315
+   },
+   "hnsw post-filter": {
+    "p50_ms": 2.19,
+    "p99_ms": 3.81,
+    "recall@10_vs_exact": 0.9,
+    "short_results": 0.315
+   },
+   "hnsw iterative": {
+    "p50_ms": 2.51,
+    "p99_ms": 7.09,
+    "recall@10_vs_exact": 0.973,
+    "short_results": 0.0
+   },
+   "shipped (iterative + planner)": {
+    "p50_ms": 2.37,
+    "p99_ms": 5.74,
+    "recall@10_vs_exact": 0.973,
+    "short_results": 0.0
+   },
+   "keyword (all words)": {
+    "p50_ms": 6.94,
+    "p99_ms": 20.64,
+    "recall@10_vs_exact": 0.032,
+    "short_results": 0.815
+   }
+  },
+  "large (20,000 assets)": {
+   "exact": {
+    "p50_ms": 31.99,
+    "p99_ms": 45.66,
+    "recall@10_vs_exact": 1.0,
+    "short_results": 0.0
+   },
+   "planner default": {
+    "p50_ms": 3.08,
+    "p99_ms": 4.46,
+    "recall@10_vs_exact": 0.233,
+    "short_results": 1.0
+   },
+   "hnsw post-filter": {
+    "p50_ms": 2.12,
+    "p99_ms": 3.81,
+    "recall@10_vs_exact": 0.233,
+    "short_results": 1.0
+   },
+   "hnsw iterative": {
+    "p50_ms": 7.21,
+    "p99_ms": 16.03,
+    "recall@10_vs_exact": 0.974,
+    "short_results": 0.0
+   },
+   "shipped (iterative + planner)": {
+    "p50_ms": 6.29,
+    "p99_ms": 16.32,
+    "recall@10_vs_exact": 0.974,
+    "short_results": 0.0
+   },
+   "keyword (all words)": {
+    "p50_ms": 2.74,
+    "p99_ms": 8.33,
+    "recall@10_vs_exact": 0.039,
+    "short_results": 0.9
+   }
+  },
+  "medium (3,000 assets)": {
+   "exact": {
+    "p50_ms": 4.02,
+    "p99_ms": 6.31,
+    "recall@10_vs_exact": 1.0,
+    "short_results": 0.0
+   },
+   "planner default": {
+    "p50_ms": 2.54,
+    "p99_ms": 5.03,
+    "recall@10_vs_exact": 0.385,
+    "short_results": 0.635
+   },
+   "hnsw post-filter": {
+    "p50_ms": 2.07,
+    "p99_ms": 3.86,
+    "recall@10_vs_exact": 0.034,
+    "short_results": 1.0
+   },
+   "hnsw iterative": {
+    "p50_ms": 29.1,
+    "p99_ms": 62.87,
+    "recall@10_vs_exact": 0.991,
+    "short_results": 0.0
+   },
+   "shipped (iterative + planner)": {
+    "p50_ms": 3.38,
+    "p99_ms": 4.54,
+    "recall@10_vs_exact": 1.0,
+    "short_results": 0.0
+   },
+   "keyword (all words)": {
+    "p50_ms": 2.21,
+    "p99_ms": 10.08,
+    "recall@10_vs_exact": 0.043,
+    "short_results": 0.955
+   }
+  },
+  "small (200 assets)": {
+   "exact": {
+    "p50_ms": 0.63,
+    "p99_ms": 1.07,
+    "recall@10_vs_exact": 1.0,
+    "short_results": 0.0
+   },
+   "planner default": {
+    "p50_ms": 0.6,
+    "p99_ms": 1.23,
+    "recall@10_vs_exact": 1.0,
+    "short_results": 0.0
+   },
+   "hnsw post-filter": {
+    "p50_ms": 1.98,
+    "p99_ms": 4.11,
+    "recall@10_vs_exact": 0.001,
+    "short_results": 1.0
+   },
+   "hnsw iterative": {
+    "p50_ms": 423.19,
+    "p99_ms": 687.03,
+    "recall@10_vs_exact": 0.987,
+    "short_results": 0.0
+   },
+   "shipped (iterative + planner)": {
+    "p50_ms": 0.73,
+    "p99_ms": 1.41,
+    "recall@10_vs_exact": 1.0,
+    "short_results": 0.0
+   },
+   "keyword (all words)": {
+    "p50_ms": 2.24,
+    "p99_ms": 9.72,
+    "recall@10_vs_exact": 0.011,
+    "short_results": 1.0
+   }
+  },
+  "tiny (50 assets)": {
+   "exact": {
+    "p50_ms": 0.45,
+    "p99_ms": 0.83,
+    "recall@10_vs_exact": 1.0,
+    "short_results": 0.0
+   },
+   "planner default": {
+    "p50_ms": 0.48,
+    "p99_ms": 0.71,
+    "recall@10_vs_exact": 1.0,
+    "short_results": 0.0
+   },
+   "hnsw post-filter": {
+    "p50_ms": 2.17,
+    "p99_ms": 3.38,
+    "recall@10_vs_exact": 0.002,
+    "short_results": 1.0
+   },
+   "hnsw iterative": {
+    "p50_ms": 782.58,
+    "p99_ms": 946.43,
+    "recall@10_vs_exact": 0.696,
+    "short_results": 0.59
+   },
+   "shipped (iterative + planner)": {
+    "p50_ms": 0.54,
+    "p99_ms": 1.52,
+    "recall@10_vs_exact": 1.0,
+    "short_results": 0.0
+   },
+   "keyword (all words)": {
+    "p50_ms": 1.71,
+    "p99_ms": 7.13,
+    "recall@10_vs_exact": 0.003,
+    "short_results": 1.0
+   }
+  }
+ }
+}

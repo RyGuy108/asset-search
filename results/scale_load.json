@@ -1,0 +1,7 @@
+{
+ "rows": 1007786,
+ "load_s": 1952,
+ "hnsw_build_s": 112,
+ "hnsw_size": "750 MB",
+ "hnsw": "m=16, ef_construction=64, halfvec(256), 4 cores"
+}

@@ -1,0 +1,40 @@
+
+== whale: 100,000 assets per user, 200 queries, ef_search=100
+  exact                            p50  198.10 ms  p99  259.01 ms  recall 1.000  <10 results 0%
+  planner default                  p50    2.77 ms  p99    5.95 ms  recall 0.900  <10 results 32%
+  hnsw post-filter                 p50    2.19 ms  p99    3.81 ms  recall 0.900  <10 results 32%
+  hnsw iterative                   p50    2.51 ms  p99    7.09 ms  recall 0.973  <10 results 0%
+  shipped (iterative + planner)    p50    2.37 ms  p99    5.74 ms  recall 0.973  <10 results 0%
+  keyword (all words)              p50    6.94 ms  p99   20.64 ms  recall 0.032  <10 results 82%
+
+== large: 20,000 assets per user, 200 queries, ef_search=100
+  exact                            p50   31.99 ms  p99   45.66 ms  recall 1.000  <10 results 0%
+  planner default                  p50    3.08 ms  p99    4.46 ms  recall 0.233  <10 results 100%
+  hnsw post-filter                 p50    2.12 ms  p99    3.81 ms  recall 0.233  <10 results 100%
+  hnsw iterative                   p50    7.21 ms  p99   16.03 ms  recall 0.974  <10 results 0%
+  shipped (iterative + planner)    p50    6.29 ms  p99   16.32 ms  recall 0.974  <10 results 0%
+  keyword (all words)              p50    2.74 ms  p99    8.33 ms  recall 0.039  <10 results 90%
+
+== medium: 3,000 assets per user, 200 queries, ef_search=100
+  exact                            p50    4.02 ms  p99    6.31 ms  recall 1.000  <10 results 0%
+  planner default                  p50    2.54 ms  p99    5.03 ms  recall 0.385  <10 results 64%
+  hnsw post-filter                 p50    2.07 ms  p99    3.86 ms  recall 0.034  <10 results 100%
+  hnsw iterative                   p50   29.10 ms  p99   62.87 ms  recall 0.991  <10 results 0%
+  shipped (iterative + planner)    p50    3.38 ms  p99    4.54 ms  recall 1.000  <10 results 0%
+  keyword (all words)              p50    2.21 ms  p99   10.08 ms  recall 0.043  <10 results 96%
+
+== small: 200 assets per user, 200 queries, ef_search=100
+  exact                            p50    0.63 ms  p99    1.07 ms  recall 1.000  <10 results 0%
+  planner default                  p50    0.60 ms  p99    1.23 ms  recall 1.000  <10 results 0%
+  hnsw post-filter                 p50    1.98 ms  p99    4.11 ms  recall 0.001  <10 results 100%
+  hnsw iterative                   p50  423.19 ms  p99  687.03 ms  recall 0.987  <10 results 0%
+  shipped (iterative + planner)    p50    0.73 ms  p99    1.41 ms  recall 1.000  <10 results 0%
+  keyword (all words)              p50    2.24 ms  p99    9.72 ms  recall 0.011  <10 results 100%
+
+== tiny: 50 assets per user, 200 queries, ef_search=100
+  exact                            p50    0.45 ms  p99    0.83 ms  recall 1.000  <10 results 0%
+  planner default                  p50    0.48 ms  p99    0.71 ms  recall 1.000  <10 results 0%
+  hnsw post-filter                 p50    2.17 ms  p99    3.38 ms  recall 0.002  <10 results 100%
+  hnsw iterative                   p50  782.58 ms  p99  946.43 ms  recall 0.696  <10 results 59%
+  shipped (iterative + planner)    p50    0.54 ms  p99    1.52 ms  recall 1.000  <10 results 0%
+  keyword (all words)              p50    1.71 ms  p99    7.13 ms  recall 0.003  <10 results 100%
