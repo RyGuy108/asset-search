@@ -86,13 +86,33 @@ less. For the largest user that is 83x faster than an exact scan.
 
 ### Variants through Magic Hour
 
+Variants come in two modes, and the UI lets the user pick one.
+
+**Edit** sends the source image to Magic Hour's image editor (`nano-banana-2`) with an instruction
+that says what to keep and what to change. The exact product, character or layout survives:
+
+![edits](docs/edits.jpg)
+
+Top: a past product shot (left), then edits that change the setting and the lighting, and one that
+re-renders it in another medium. Bottom: a past closet photo restyled "like my lithograph book illustration".
+The planner retrieves the user's best-matching asset for that phrase (one of the *Time Machine* plates)
+and borrows its style clauses.
+
+**Regenerate** re-renders the prompt with text-to-image (`z-image-turbo`), varying the axes the original
+prompt left open (time of day, framing, medium). It is ten times cheaper, but it keeps the idea, not
+the object:
+
 ![variants](docs/variants.jpg)
 
-Top row: a past product shot (left) and four variants, with time of day, framing and medium planned on
-the axes its prompt left open. Bottom row: a past closet photo restyled "like my lithograph book
-illustration". The planner retrieves the user's best-matching asset for that phrase (one of the
-*Time Machine* plates) and borrows its style clauses. The run made 8 renders (`z-image-turbo`,
-5 credits each, 40 credits total). All 8 were searchable as children of their sources as soon as the job
+To measure how much of the source each mode keeps, `scripts/eval_variants.py` matches SIFT features
+between source and output and counts RANSAC-verified geometric inliers:
+
+| mode | images | median SIFT inliers vs source | outputs with 20+ inliers | credits / image |
+|---|---|---|---|---|
+| regenerate (`z-image-turbo`) | 8 | 6 | 0% | 5 |
+| **edit** (`nano-banana-2`) | 6 | **31.5** | **83%** | 50 |
+
+All 14 renders (340 credits) became searchable as children of their sources as soon as each job
 finished.
 
 ## How it works
@@ -124,7 +144,8 @@ used for tuning.
 
 **Per-user filtering.** Every query is scoped to `user_id`. See the scale section for why that matters with HNSW.
 
-**Variants.** `POST /users/{u}/assets/{id}/variants` writes a `variant_jobs` row and enqueues an RQ job.
+**Variants.** `POST /users/{u}/assets/{id}/variants` plans the prompts or edit instructions, writes a
+`variant_jobs` row and enqueues an RQ job.
 The worker records each Magic Hour project id *before* it polls, so a retried job resumes polling renders
 it already paid for instead of submitting (and paying for) them again. Outputs are downloaded and inserted
 with `parent_ids` set, so lineage shows in the UI ("Made from" / "Variants and edits").
@@ -145,9 +166,11 @@ with `parent_ids` set, so lineage shows in the UI ("Made from" / "Variants and e
   "basketball" through shared n-grams), and assets whose text is generic (7 try-on photos all described
   as "virtual try-on"). The fix for those is an image-side embedding, which needs vision weights that
   were not available here.
-* **Variants regenerate rather than edit.** `z-image-turbo` text-to-image keeps the subject and style
-  but not the exact product (row 1 shows a different sneaker each time). Identity-preserving variants
-  would route image assets through `ai_image_editor` with the source as a reference, at about 20× the credits.
+* **The first variants regenerated rather than edited.** Text-to-image kept the subject and style but
+  not the exact product: it produced a different sneaker every time. Edit mode (above) fixes that at
+  10× the credits, so the UI offers both.
+* **A style-borrowing bug.** The clause splitter matched "light" inside "slight**ly**", so "slightly
+  askew" was borrowed as a style. Matching on word boundaries and splitting on sentences fixed it.
 
 ## Run it
 
@@ -173,6 +196,7 @@ python scripts/eval_library.py                                   # dev queries
 python scripts/eval_library.py --queries eval/queries_holdout.tsv
 python scripts/eval_coco.py                                      # 3,000 held-out COCO images
 python scripts/bench_scale.py load && python scripts/bench_scale.py bench
+python scripts/eval_variants.py                                  # after running some variant jobs
 pytest -q
 ```
 
@@ -183,5 +207,5 @@ pytest -q
 | `GET /users/{u}/search?q=&kind=&mode=hybrid\|vector\|keyword` | ranked assets |
 | `POST /users/{u}/assets` | record generations (prompt, tool, model, Magic Hour id, parents) |
 | `GET /users/{u}/assets/{id}` | asset with parents and children |
-| `POST /users/{u}/assets/{id}/variants` `{n, instruction?, style_like?, dry_run?}` | queue variants |
+| `POST /users/{u}/assets/{id}/variants` `{n, mode: edit\|regenerate, instruction?, style_like?, dry_run?}` | queue variants |
 | `GET /jobs/{id}` | variant job status, credits, result ids |
