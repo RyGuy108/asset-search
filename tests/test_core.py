@@ -55,3 +55,18 @@ def test_relevance_expands_to_same_prompt_and_children():
 def test_metrics():
     m = metrics(["x", "r1", "y"], {"r1", "r2"})
     assert m["MRR"] == 0.5 and m["R@1"] == 0 and m["R@5"] == 0.5 and m["hit@10"] == 1
+
+
+def test_plan_edits_keeps_subject_and_varies_changes():
+    from assetsearch.variants import plan_edits
+
+    ps = plan_edits("a sneaker on a white pedestal", n=3, seed=2)
+    assert len(ps) == 3 and len(set(ps)) == 3
+    assert all("Keep the main subject" in p for p in ps)
+    styled = plan_edits("a coat", n=2, style_from="a castle, two-colour lithograph illustration, fine ink lines")
+    assert all("lithograph" in p for p in styled)
+
+
+def test_style_split_uses_word_boundaries():
+    subj, style = split_subject_style("Elegant, scientific, slightly askew. Two-colour lithograph illustration")
+    assert "slightly askew" in subj and style == ["Two-colour lithograph illustration"]
